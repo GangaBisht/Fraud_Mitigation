@@ -1,5 +1,5 @@
 import { Request } from 'express';
-
+import { SESSION_NAME } from './config'
 
 //!! undefined converted to false and if string of object then converted to true
 
@@ -13,7 +13,6 @@ export const logIn = (req: Request, userId: string)=>{
 
 
 export const logOut = (req: Request, res: Response)=>{
-	
 	new Promise((resolve, reject)=>{
 		req.session!.destroy((err: Error)=>{
 			if(err) reject(err)

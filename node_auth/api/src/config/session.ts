@@ -1,5 +1,6 @@
 import { SessionOptions } from 'express-session';
 import { IN_PROD } from './app';
+import { v4 as uuid } from 'uuid'
 
 const HALF_HOUR = 1000*60*30;
 
@@ -12,6 +13,7 @@ export const {
 export const SESSION_OPTIONS: SessionOptions ={
 	secret: SESSION_SECRET,
 	name: SESSION_NAME,
+	
 	cookie: {
 		maxAge: +SESSION_IDLE_TIMEOUT,
 		secure: IN_PROD,
